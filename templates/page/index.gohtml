@@ -1,7 +1,10 @@
 {{define "body"}}
     <ul>
-    {{range .Websites}}
-        <li><a href="{{.URL}}" rel="noreferrer">{{.Name}}</a></li>
+    {{range $i, $v := .Websites}}
+        {{if .ModuloEq $i 16 0}}
+            </ul><ul>
+        {{end}}
+        <li><a href="{{.URL}}" rel="noreferrer" target="_blank">{{.Name}}</a></li>
     {{end}}
     </ul>
 {{end}}

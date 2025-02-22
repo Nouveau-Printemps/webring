@@ -6,6 +6,15 @@ import (
 	"github.com/anhgelus/golatt"
 )
 
+type Data struct {
+	Websites []*Website
+}
+
+type Website struct {
+	Name string
+	URL  string
+}
+
 //go:embed templates
 var templates embed.FS
 
@@ -15,6 +24,18 @@ var dev bool
 
 func init() {
 	flag.BoolVar(&dev, "dev", false, "Run in development mode")
+}
+
+// THIS WILL BE REFACTORED WITH GOLATT 0.3.0
+
+func (d *Data) ModuloEq(i int, mod int, eq int) bool {
+	return i%mod == eq
+}
+
+// THIS WILL BE REFACTORED WITH GOLATT 0.3.0
+
+func (d *Website) ModuloEq(i int, mod int, eq int) bool {
+	return i%mod == eq
 }
 
 func main() {
@@ -36,17 +57,9 @@ func main() {
 		"Home",
 		"",
 		"Nouveau Printemps' Webring",
-		struct {
-			Websites []struct {
-				Name string
-				URL  string
-			}
-		}{
-			Websites: []struct {
-				Name string
-				URL  string
-			}{
-				{"Anhgelus Morhtuuzh", "https://now.anhgelus.world"},
+		Data{
+			Websites: []*Website{
+				{"Anhgelus Morhtuuzh", "https://now.anhgelus.world/"},
 			},
 		}).
 		Handle()
