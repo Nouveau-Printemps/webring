@@ -1,0 +1,9 @@
+services:
+  webring:
+    build: .
+    ports:
+      - "8000:80"
+    environment:
+      CONFIG: "/config.toml"
+    volumes:
+      - ./example_config.toml:/config.toml:ro
