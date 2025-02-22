@@ -1,0 +1,7 @@
+{{define "body"}}
+    <ul>
+    {{range .Websites}}
+        <li><a href="{{.URL}}" rel="noreferrer">{{.Name}}</a></li>
+    {{end}}
+    </ul>
+{{end}}

@@ -31,6 +31,25 @@ func main() {
 	g.Templates = append(g.Templates,
 		"templates/base/*.gohtml",
 	)
+	g.NewTemplate("index",
+		"/",
+		"Home",
+		"",
+		"Nouveau Printemps' Webring",
+		struct {
+			Websites []struct {
+				Name string
+				URL  string
+			}
+		}{
+			Websites: []struct {
+				Name string
+				URL  string
+			}{
+				{"Anhgelus Morhtuuzh", "https://now.anhgelus.world"},
+			},
+		}).
+		Handle()
 	if dev {
 		g.StartServer(":8000")
 	} else {

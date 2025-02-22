@@ -1,4 +1,4 @@
-module webring
+module github.com/nouveau-printemps/webring
 
 go 1.24
 
