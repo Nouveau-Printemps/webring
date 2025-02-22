@@ -8,3 +8,5 @@ services:
     volumes:
       - ./example_config.toml:/config.toml:ro
       - ./public:/app/public:ro
+      - ./join_ring.html:/app/join_ring.html:ro
+      - ./legal_information.html:/app/legal_information.html:ro
