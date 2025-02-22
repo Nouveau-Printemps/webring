@@ -7,10 +7,15 @@
     --text: #d4cdd6;
     --accent: #b1a4f1;
   }
+  --content-margin: 15%;
+  --large-content-margin: 10%;
+  --content-little-margin: 4rem;
+  --text-margin: 1rem;
+  --text-big-margin: 1.5rem;
 }
 
 body {
-  font-family: Inter, serif;
+  font-family: "Raveo Variable", Inter, sans-serif;
   font-size: 20px;
   line-height: 1.25rem;
   background: var(--background);
@@ -19,14 +24,14 @@ body {
 
 h1,h2,h3,h4 {
   font-weight: bold;
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--text-big-margin);
 }
 h1 {
   font-size: 2.5rem;
 }
 
 p {
-  margin-bottom: 1rem;
+  margin-bottom: var(--text-margin);
   &:last-child {
     margin-bottom: 0;
   }
@@ -48,15 +53,15 @@ li {
   margin-bottom: 0.25rem;
 }
 
-.presentation {
-  padding: 4rem 15%;
+.text {
+  padding: var(--content-little-margin) var(--content-margin);
 }
 
 .list {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  column-gap: 4rem;
+  column-gap: var(--content-little-margin);
   row-gap: 0;
-  margin-right: 10%;
-  margin-left: 10%;
+  margin-right: var(--large-content-margin);
+  margin-left: var(--large-content-margin);
 }
