@@ -7,3 +7,4 @@ services:
       CONFIG: "/config.toml"
     volumes:
       - ./example_config.toml:/config.toml:ro
+      - ./public:/app/public:ro
