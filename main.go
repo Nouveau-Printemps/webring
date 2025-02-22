@@ -47,8 +47,15 @@ func main() {
 	g = golatt.New(templates)
 	g.DefaultSeoData = &golatt.SeoData{
 		Image:       "",
-		Description: "",
+		Description: cfg.Description[0],
 		Domain:      cfg.URL,
+	}
+	g.NotFoundHandler = func(w http.ResponseWriter, r *http.Request) {
+		g.Render(w, "not_found", &golatt.TemplateData{
+			Title: "404",
+			SEO:   &golatt.SeoData{},
+			Data:  &cfg,
+		})
 	}
 	g.FormatTitle = func(t string) string {
 		return t + " - " + cfg.Name
