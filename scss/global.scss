@@ -64,4 +64,12 @@ li {
   row-gap: 0;
   margin-right: var(--large-content-margin);
   margin-left: var(--large-content-margin);
+  @media only screen and (max-width: 850px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media only screen and (max-width: 650px) {
+    grid-template-columns: 1fr;
+    margin-right: var(--content-margin);
+    margin-left: var(--content-margin);
+  }
 }
