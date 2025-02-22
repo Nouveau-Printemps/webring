@@ -1,4 +1,4 @@
-module github.com/nouveau-printemps/webring
+module github.com/Nouveau-Printemps/webring
 
 go 1.24
 
