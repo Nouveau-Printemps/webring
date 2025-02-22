@@ -1,7 +1,20 @@
+:root {
+  --background: #fff;
+  --text: #060315;
+  --accent: #2c13a8;
+  @media (prefers-color-scheme: dark) {
+    --background: #222029;
+    --text: #d4cdd6;
+    --accent: #b1a4f1;
+  }
+}
+
 body {
   font-family: Inter, serif;
   font-size: 20px;
   line-height: 1.25rem;
+  background: var(--background);
+  color: var(--text);
 }
 
 h1,h2,h3,h4 {
@@ -16,6 +29,13 @@ p {
   margin-bottom: 1rem;
   &:last-child {
     margin-bottom: 0;
+  }
+}
+
+a {
+  color: var(--text);
+  &:hover {
+    color: var(--accent);
   }
 }
 
