@@ -5,6 +5,8 @@ import (
 	"flag"
 	"github.com/BurntSushi/toml"
 	"github.com/anhgelus/golatt"
+	"math/rand"
+	"net/http"
 	"os"
 )
 
@@ -75,6 +77,10 @@ func main() {
 		"Legal information about the ring.",
 		&cfg).
 		Handle()
+	g.HandleFunc("/random", func(w http.ResponseWriter, r *http.Request) {
+		http.Redirect(w, r, cfg.Websites[rand.Intn(len(cfg.Websites))].URL, http.StatusFound)
+	})
+
 	if dev {
 		g.StartServer(":8000")
 	} else {

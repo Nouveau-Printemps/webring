@@ -7,3 +7,6 @@ legal_information_path = "legal_information.html"
 [[websites]]
   Name = "Example"
   URL = "https://example.org/"
+[[websites]]
+  Name = "Anhgelus Morhtuuzh"
+  URL = "https://now.anhgelus.world/"
