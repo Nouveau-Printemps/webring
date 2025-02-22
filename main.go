@@ -59,7 +59,21 @@ func main() {
 		"Home",
 		"",
 		cfg.Description[0],
-		cfg).
+		&cfg).
+		Handle()
+	g.NewTemplate("join",
+		"/join",
+		"Join the Ring",
+		"",
+		"Read the instructions to join the ring!",
+		&cfg).
+		Handle()
+	g.NewTemplate("legal",
+		"/legal",
+		"Legal information",
+		"",
+		"Legal information about the ring.",
+		&cfg).
 		Handle()
 	if dev {
 		g.StartServer(":8000")
@@ -70,11 +84,11 @@ func main() {
 
 func genConfigToStdOut() {
 	cfg := Config{
-		Name:              "My Webring",
-		URL:               "ring.example.org",
-		JoinTheRingPath:   "/app/join_ring.html",
-		LegalMentionsPath: "/app/legal_mentions.html",
-		Description:       []string{"Welcome to my fantastic webring!", "It has all my friends' websites and mine!"},
+		Name:                 "My Webring",
+		URL:                  "ring.example.org",
+		JoinTheRingPath:      "join_ring.html",
+		LegalInformationPath: "legal_information.html",
+		Description:          []string{"Welcome to my fantastic webring!", "It has all my friends' websites and mine!"},
 		Websites: []*Website{
 			{
 				Name: "Example",

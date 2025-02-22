@@ -11,12 +11,12 @@ var (
 )
 
 type Config struct {
-	Name              string     `toml:"name"`
-	URL               string     `toml:"url"`
-	Description       []string   `toml:"description"`
-	JoinTheRingPath   string     `toml:"join_the_ring_path"`
-	LegalMentionsPath string     `toml:"legal_mentions_path"`
-	Websites          []*Website `toml:"websites"`
+	Name                 string     `toml:"name"`
+	URL                  string     `toml:"url"`
+	Description          []string   `toml:"description"`
+	JoinTheRingPath      string     `toml:"join_the_ring_path"`
+	LegalInformationPath string     `toml:"legal_information_path"`
+	Websites             []*Website `toml:"websites"`
 }
 
 type Website struct {
@@ -34,8 +34,8 @@ func (c *Config) GetJoinTheRing() template.HTML {
 	return c.get(c.JoinTheRingPath, &joinTheRing)
 }
 
-func (c *Config) GetLegalMentions() template.HTML {
-	return c.get(c.LegalMentionsPath, &legalMentions)
+func (c *Config) GetLegalInformation() template.HTML {
+	return c.get(c.LegalInformationPath, &legalMentions)
 }
 
 func (c *Config) get(path string, v *string) template.HTML {
