@@ -22,7 +22,10 @@ body {
   color: var(--text);
 }
 
-h1,h2,h3,h4 {
+h1,
+h2,
+h3,
+h4 {
   font-weight: bold;
   margin-bottom: var(--text-big-margin);
   line-height: 1.25em;

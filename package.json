@@ -4,7 +4,7 @@
   "scripts": {
     "build": "bun run build:js && bun run build:sass",
     "watch:sass": "sass --watch scss/main.scss dist/styles.css",
-    "build:js": "bun build ./src/index.ts --outdir ./dist --minify",
+    "build:js": "bun build ./ts/index.ts --outdir ./dist --minify",
     "build:sass": "sass  --no-source-map --style=compressed scss/main.scss dist/styles.css",
     "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json|jsx|tsx|html|css|scss)\""
   },
