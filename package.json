@@ -1,0 +1,20 @@
+{
+  "name": "webring",
+  "type": "module",
+  "scripts": {
+    "build": "bun run build:js && bun run build:sass",
+    "watch:sass": "sass --watch scss/main.scss dist/styles.css",
+    "build:js": "bun build ./src/index.ts --outdir ./dist --minify",
+    "build:sass": "sass  --no-source-map --style=compressed scss/main.scss dist/styles.css",
+    "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json|jsx|tsx|html|css|scss)\""
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "prettier": "^3.5.2",
+    "sass": "^1.85.0",
+    "scss": "^0.2.4"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
