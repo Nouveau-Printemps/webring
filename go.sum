@@ -1,3 +1,5 @@
+github.com/BurntSushi/toml v1.4.0 h1:kuoIxZQy2WRRk1pttg9asf+WVv6tWQuBNVmK8+nqPr0=
+github.com/BurntSushi/toml v1.4.0/go.mod h1:ukJfTF/6rtPPRCnwkur4qwRxa8vTRFBF0uk2lLoLwho=
 github.com/anhgelus/golatt v0.2.0 h1:tdgrx3K61mVYBMy9CNhTheSIV8lPWBl/JjeDIHmz9eg=
 github.com/anhgelus/golatt v0.2.0/go.mod h1:Lgyy/Tm9A3w1ft72mZOUxl/p+4G2/WB3qxoXTv7Y4y8=
 github.com/gorilla/mux v1.8.1 h1:TuBL49tXwgrFYWhqrNgrUNEY92u81SPhu7sTdzQEiWY=
