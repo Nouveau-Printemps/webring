@@ -53,9 +53,13 @@ func main() {
 	}
 
 	if dev {
-		g = golatt.New(templates, os.DirFS("public/"), os.DirFS("dist/"))
+		g = golatt.New(golatt.UsableEmbedFS("templates", templates), os.DirFS("public/"), os.DirFS("dist/"))
 	} else {
-		g = golatt.New(templates, os.DirFS("public/"), golatt.UsableEmbedFS("dist", assets))
+		g = golatt.New(
+			golatt.UsableEmbedFS("templates", templates),
+			os.DirFS("public/"),
+			golatt.UsableEmbedFS("dist", assets),
+		)
 	}
 	g.DefaultSeoData = &golatt.SeoData{
 		Image:       "",
@@ -73,7 +77,7 @@ func main() {
 		return t + " - " + cfg.Name
 	}
 	g.Templates = append(g.Templates,
-		"templates/base/*.gohtml",
+		"base/*.gohtml",
 	)
 	g.TemplateFuncMap = template.FuncMap{
 		"moduloEq": func(i int, mod int, eq int) bool {
