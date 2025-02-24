@@ -3,6 +3,7 @@ package main
 import (
 	"embed"
 	"flag"
+	"fmt"
 	"github.com/BurntSushi/toml"
 	"github.com/anhgelus/golatt"
 	"html/template"
@@ -11,8 +12,12 @@ import (
 	"os"
 )
 
-//go:embed templates
-var templates embed.FS
+var (
+	//go:embed templates
+	templates embed.FS
+	//go:embed dist
+	assets embed.FS
+)
 
 var g *golatt.Golatt
 
@@ -20,12 +25,14 @@ var (
 	dev            bool
 	generateConfig bool
 	configPath     string
+	port           uint
 )
 
 func init() {
 	flag.BoolVar(&dev, "dev", false, "Run in development mode")
 	flag.BoolVar(&generateConfig, "generate-config", false, "Generate default config file")
 	flag.StringVar(&configPath, "config", "config.toml", "Webring's config file")
+	flag.UintVar(&port, "port", 80, "Port to use")
 }
 
 func main() {
@@ -45,7 +52,11 @@ func main() {
 		panic(err)
 	}
 
-	g = golatt.New(templates)
+	if dev {
+		g = golatt.New(templates, os.DirFS("public/"), os.DirFS("dist/"))
+	} else {
+		g = golatt.New(templates, os.DirFS("public/"), golatt.UsableEmbedFS("dist", assets))
+	}
 	g.DefaultSeoData = &golatt.SeoData{
 		Image:       "",
 		Description: cfg.Description[0],
@@ -98,7 +109,7 @@ func main() {
 	if dev {
 		g.StartServer(":8000")
 	} else {
-		g.StartServer(":80")
+		g.StartServer(fmt.Sprintf(":%d", port))
 	}
 }
 
