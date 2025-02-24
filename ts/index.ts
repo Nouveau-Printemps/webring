@@ -16,7 +16,7 @@ function setupEvents() {
           scrollTo({
             top: 0,
             left: 0,
-            behavior: "smooth",
+            behavior: "auto",
           });
         });
     });
@@ -28,7 +28,7 @@ window.addEventListener("popstate", (_) => {
   scrollTo({
     top: 0,
     left: 0,
-    behavior: "smooth",
+    behavior: "auto",
   });
 });
 setupEvents();
