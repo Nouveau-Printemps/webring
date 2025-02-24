@@ -10,6 +10,7 @@ import (
 	"math/rand"
 	"net/http"
 	"os"
+	"strings"
 )
 
 var (
@@ -84,24 +85,23 @@ func main() {
 			return i%mod == eq
 		},
 	}
-
 	g.NewTemplate("index",
 		"/",
-		"Home",
+		capitalize(cfg.Translation.HomePage),
 		"",
 		cfg.Description[0],
 		&cfg).
 		Handle()
 	g.NewTemplate("join",
 		"/join",
-		"Join the Ring",
+		capitalize(cfg.Translation.JoinTheRingPage),
 		"",
 		"Read the instructions to join the ring!",
 		&cfg).
 		Handle()
 	g.NewTemplate("legal",
 		"/legal",
-		"Legal information",
+		capitalize(cfg.Translation.LegalInformationPage),
 		"",
 		"Legal information about the ring.",
 		&cfg).
@@ -115,6 +115,11 @@ func main() {
 	} else {
 		g.StartServer(fmt.Sprintf(":%d", port))
 	}
+}
+
+// capitalize must receive a s' length > 1
+func capitalize(s string) string {
+	return strings.ToUpper(string([]rune(s)[0])) + s[1:]
 }
 
 func genConfigToStdOut() {
