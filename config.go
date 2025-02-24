@@ -18,12 +18,12 @@ type Config struct {
 	LegalInformationPath string       `toml:"legal_information_path"`
 	FaviconPath          string       `toml:"favicon_path"`
 	Translation          *Translation `toml:"translation"`
-	Websites             []*Website   `toml:"websites"`
+	Websites             []*Website   `toml:"website"`
 }
 
 type Website struct {
-	Name string
-	URL  string
+	Name string `toml:"name"`
+	URL  string `toml:"url"`
 }
 
 type Translation struct {

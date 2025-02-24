@@ -12,9 +12,9 @@ favicon_path = "logo.png"
   join_the_ring_page = "join the ring"
   legal_information_page = "legal information"
 
-[[websites]]
-  Name = "Example"
-  URL = "https://example.org/"
-[[websites]]
-  Name = "Anhgelus Morhtuuzh"
-  URL = "https://now.anhgelus.world/"
+[[website]]
+  name = "Example"
+  url = "https://example.org/"
+[[website]]
+  name = "Anhgelus Morhtuuzh"
+  url = "https://now.anhgelus.world/"
