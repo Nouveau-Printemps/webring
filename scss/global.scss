@@ -33,6 +33,15 @@ h4 {
 h1 {
   font-size: 2.5rem;
 }
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.75rem;
+}
+h4 {
+  font-size: 1.5rem;
+}
 
 p {
   margin-bottom: var(--text-margin);
@@ -55,6 +64,11 @@ ul {
 li {
   padding-left: 0.5rem;
   margin-bottom: 0.25rem;
+}
+
+em {
+  font-family: Inter, sans-serif; /* Remove Raveo because it doesn't support italic */
+  font-style: italic;
 }
 
 .text {
