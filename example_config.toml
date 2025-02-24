@@ -5,6 +5,13 @@ join_the_ring_path = "join_ring.html"
 legal_information_path = "legal_information.html"
 favicon_path = "logo.png"
 
+[translation]
+  random_website = "Go to a random website"
+  internal_pages = "Internal pages:"
+  home_page = "home"
+  join_the_ring_page = "join the ring"
+  legal_information_page = "legal information"
+
 [[websites]]
   Name = "Example"
   URL = "https://example.org/"

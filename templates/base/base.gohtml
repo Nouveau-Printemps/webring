@@ -12,10 +12,10 @@
     <body>
     {{template "body" .Data}}
     <footer class="text">
-        <p>Internal pages:
-            <a href="/">home</a>,
-            <a href="/join">join the ring</a>,
-            <a href="/legal">legal mentions</a>
+        <p>{{ .Data.Translation.InternalPages }}
+            <a href="/">{{ .Data.Translation.HomePage }}</a>,
+            <a href="/join">{{ .Data.Translation.JoinTheRingPage }}</a>,
+            <a href="/legal">{{ .Data.Translation.LegalInformationPage }}</a>.
         </p>
         <p>
             Created with <a href="https://github.com/Nouveau-Printemps/webring" rel="noreferrer">Nouveau Printemps' Webring</a>,

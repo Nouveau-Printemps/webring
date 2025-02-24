@@ -127,6 +127,13 @@ func genConfigToStdOut() {
 				URL:  "https://example.org/",
 			},
 		},
+		Translation: &Translation{
+			RandomWebsite:        "Go to a random website",
+			InternalPages:        "Internal pages:",
+			HomePage:             "home",
+			JoinTheRingPage:      "join the ring",
+			LegalInformationPage: "legal information",
+		},
 	}
 	err := toml.NewEncoder(os.Stdout).Encode(cfg)
 	if err != nil {

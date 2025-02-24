@@ -15,7 +15,7 @@ Then, you can start your server with the flag `-config path/to/config.toml`.
 You must create two HTML files for the pages join and legal information.
 Their path is set in the config file.
 
-You can use all common tags (like `p`, `a`, `h2`, `img`...).
+You can use all common tags (like `p`, `a`, `h1`, `img`...).
 The CSS class `text` is used when you want to display text.
 The class `list` is used when you want to display a list into columns (like in the home).
 

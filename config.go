@@ -11,18 +11,27 @@ var (
 )
 
 type Config struct {
-	Name                 string     `toml:"name"`
-	URL                  string     `toml:"url"`
-	Description          []string   `toml:"description"`
-	JoinTheRingPath      string     `toml:"join_the_ring_path"`
-	LegalInformationPath string     `toml:"legal_information_path"`
-	FaviconPath          string     `toml:"favicon_path"`
-	Websites             []*Website `toml:"websites"`
+	Name                 string       `toml:"name"`
+	URL                  string       `toml:"url"`
+	Description          []string     `toml:"description"`
+	JoinTheRingPath      string       `toml:"join_the_ring_path"`
+	LegalInformationPath string       `toml:"legal_information_path"`
+	FaviconPath          string       `toml:"favicon_path"`
+	Translation          *Translation `toml:"translation"`
+	Websites             []*Website   `toml:"websites"`
 }
 
 type Website struct {
 	Name string
 	URL  string
+}
+
+type Translation struct {
+	RandomWebsite        string `toml:"random_website"`
+	InternalPages        string `toml:"internal_pages"`
+	HomePage             string `toml:"home_page"`
+	JoinTheRingPage      string `toml:"join_the_ring_page"`
+	LegalInformationPage string `toml:"legal_information_page"`
 }
 
 func (c *Config) GetJoinTheRing() template.HTML {
