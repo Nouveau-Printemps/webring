@@ -24,7 +24,7 @@ All static files are located inside the `public` directory.
 These are available under the URI `/static/path_in_public`.
 
 You can modify the favicon by putting an image called `logo.png` in your public directory.
-You change this name in the config.
+You can change this name in the config.
 
 ## Technologies
 
