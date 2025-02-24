@@ -24,12 +24,6 @@ type Website struct {
 	URL  string
 }
 
-// THIS WILL BE REFACTORED WITH GOLATT 0.3.0
-
-func (c *Config) ModuloEq(i int, mod int, eq int) bool {
-	return i%mod == eq
-}
-
 func (c *Config) GetJoinTheRing() template.HTML {
 	return c.get(c.JoinTheRingPath, &joinTheRing)
 }
@@ -48,10 +42,4 @@ func (c *Config) get(path string, v *string) template.HTML {
 	}
 	*v = string(b)
 	return template.HTML(*v)
-}
-
-// THIS WILL BE REFACTORED WITH GOLATT 0.3.0
-
-func (w *Website) ModuloEq(i int, mod int, eq int) bool {
-	return i%mod == eq
 }

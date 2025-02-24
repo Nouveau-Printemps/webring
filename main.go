@@ -5,6 +5,7 @@ import (
 	"flag"
 	"github.com/BurntSushi/toml"
 	"github.com/anhgelus/golatt"
+	"html/template"
 	"math/rand"
 	"net/http"
 	"os"
@@ -63,6 +64,12 @@ func main() {
 	g.Templates = append(g.Templates,
 		"templates/base/*.gohtml",
 	)
+	g.TemplateFuncMap = template.FuncMap{
+		"moduloEq": func(i int, mod int, eq int) bool {
+			return i%mod == eq
+		},
+	}
+
 	g.NewTemplate("index",
 		"/",
 		"Home",

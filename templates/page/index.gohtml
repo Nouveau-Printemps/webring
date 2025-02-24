@@ -9,7 +9,7 @@
     <div class="list">
         <ul>
             {{range $i, $v := .Websites}}
-            {{if ge $i 1}}{{if .ModuloEq $i 4 0}}
+            {{if ge $i 1}}{{if moduloEq $i 4 0}}
         </ul><ul>
             {{end}}{{end}}
             <li><a href="{{.URL}}" rel="noreferrer" target="_blank">{{.Name}}</a></li>
