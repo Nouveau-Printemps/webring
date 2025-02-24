@@ -108,6 +108,7 @@ func genConfigToStdOut() {
 		URL:                  "ring.example.org",
 		JoinTheRingPath:      "join_ring.html",
 		LegalInformationPath: "legal_information.html",
+		FaviconPath:          "logo.png",
 		Description:          []string{"Welcome to my fantastic webring!", "It has all my friends' websites and mine!"},
 		Websites: []*Website{
 			{

@@ -16,6 +16,7 @@ type Config struct {
 	Description          []string   `toml:"description"`
 	JoinTheRingPath      string     `toml:"join_the_ring_path"`
 	LegalInformationPath string     `toml:"legal_information_path"`
+	FaviconPath          string     `toml:"favicon_path"`
 	Websites             []*Website `toml:"websites"`
 }
 
