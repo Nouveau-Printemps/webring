@@ -1,6 +1,6 @@
 {{define "body"}}
 <div class="text presentation">
-  <h1>Webring</h1>
+  <h1>{{ .Name }}</h1>
   {{range .Config.Description}}
   <p>{{.}}</p>
   {{end}}
