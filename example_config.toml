@@ -1,5 +1,5 @@
 name = "My Webring"
-url = "ring.example.org"
+domain = "ring.example.org"
 description = ["Welcome to my fantastic webring!", "It has all my friends' websites and mine!"]
 join_the_ring_path = "join_ring.html"
 legal_information_path = "legal_information.html"
@@ -17,4 +17,4 @@ favicon_path = "logo.png"
   url = "https://example.org/"
 [[website]]
   name = "Anhgelus Morhtuuzh"
-  url = "https://now.anhgelus.world/"
+  url = "https://anhgelus.world/"

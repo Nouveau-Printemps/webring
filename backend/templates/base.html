@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="fr" prefix="og: https://ogp.me/ns#">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="{{ static .FaviconPath}}" type="image/png" />
+    <title>{{ .Title }}</title>
+    {{ $styles := asset "styles.css" }}
+    <link rel="stylesheet" href="{{ $styles.Src }}" integrity="{{ $styles.Checksum }}" />
+    <meta property="description" content="{{.Description}}" />
+    <meta property="og:title" content="{{.Title}}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://{{.Domain}}{{.URL}}" />
+    <meta property="og:description" content="{{.Description}}" />
+    <meta property="og:site_name" content="{{ .Name }}" />
+    <meta name="twitter:card" content="summary" />
+    <meta property="twitter:domain" content="{{.Domain}}" />
+    <meta property="twitter:url" content="https://{{.Domain}}{{.URL}}/" />
+    <meta name="twitter:title" content="{{.Title}}" />
+    <meta name="twitter:description" content="{{.Description}}" />
+  </head>
+  <body>
+    {{template "body" .}}
+    <footer class="text">
+      <p>
+        {{ .Translation.InternalPages }}
+        <a href="/">{{ .Translation.HomePage }}</a>, <a href="/join">{{ .Translation.JoinTheRingPage }}</a>,
+        <a href="/legal">{{ .Translation.LegalInformationPage }}</a>.
+      </p>
+      <p>
+        Created with
+        <a href="https://github.com/Nouveau-Printemps/webring" rel="noreferrer">Webring</a>, a software by
+        <a href="https://nouveauprintemps.org/" rel="noreferrer">Nouveau Printemps</a>.
+      </p>
+    </footer>
+  </body>
+</html>
