@@ -10,9 +10,9 @@
   },
   "devDependencies": {
     "@types/bun": "latest",
-    "prettier": "^3.5.2",
+    "prettier": "^3.6.2",
     "reset-css": "^5.0.2",
-    "sass": "^1.85.0",
+    "sass": "^1.93.2",
     "scss": "^0.2.4"
   },
   "peerDependencies": {
