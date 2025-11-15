@@ -1,0 +1,19 @@
+{{define "body"}}
+<div class="text presentation">
+  <h1>Webring</h1>
+  {{range .Config.Description}}
+  <p>{{.}}</p>
+  {{end}}
+  <p><a href="/random" target="_blank">{{ .Translation.RandomWebsite }}</a>.</p>
+</div>
+<div class="list">
+  <ul>
+    {{range $i, $v := .Websites}} {{if ge $i 1}}{{if eq (modulo $i 4) 0}}
+  </ul>
+  <ul>
+    {{end}}{{end}}
+    <li><a href="{{.URL}}" rel="noreferrer" target="_blank">{{.Name}}</a></li>
+    {{end}}
+  </ul>
+</div>
+{{end}}

@@ -1,15 +1,13 @@
 # Webring
 
-Software to create a webring
+Create a webring easily!
 
 ## Usage
 
 To create your own webring, you have to install the application by building it by yourself or via Docker.
 
-With this, you can print an example config to the std out with the flag `-generate-config`.
-Its format is the TOML.
-
 Then, you can start your server with the flag `-config path/to/config.toml`.
+It will create a default config located at the given path.
 
 ### HTML files
 You must create two HTML files for the pages join and legal information.
@@ -30,7 +28,7 @@ You can change this name in the config.
 
 It is an SSR compiled webserver.
 
-- Go 1.24
-- [anhgelus/Golatt](https://github.com/anhgelus/golatt)
-- Bun
+- Go
+- `go-chi/chi` router
+- `BurntSushi/toml`
 - SCSS
