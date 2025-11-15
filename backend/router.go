@@ -17,7 +17,7 @@ import (
 )
 
 const (
-	Version     = "0.4.0"
+	Version     = "1.0.0"
 	configKey   = "config"
 	isUpdateKey = "is_update"
 	assetsFSKey = "assets_fs"
@@ -39,7 +39,7 @@ func SetupLogger(debug bool) {
 		ReplaceAttr: logFormat.ReplaceAttr,
 		Level:       logLevel,
 	})).With(
-		slog.String("app", "anhgelus/small-web"),
+		slog.String("app", "nouveau-printemps/webring"),
 		slog.String("version", Version),
 	)
 
