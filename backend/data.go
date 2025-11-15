@@ -30,7 +30,7 @@ func (d *Data) HandleGenericLater(name string, title, desc string) http.HandlerF
 		cfg := r.Context().Value(configKey).(*Config)
 		d.Config = cfg
 		d.URL = "/" + strings.TrimPrefix(r.URL.Path, "/")
-		d.Title = title
+		d.Title = fmt.Sprintf("%s - %s", cfg.Name, title)
 		d.Description = desc
 		t, err := template.New("").Funcs(template.FuncMap{
 			"static": getStatic,
