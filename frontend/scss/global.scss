@@ -14,16 +14,19 @@
   --content-little-margin: 4rem;
   --max-content: 850px;
   --max-large-content: calc(var(--max-content) + 100px);
-  --text-margin: 0.75em;
-  --text-big-margin: 1em;
+  --text-margin: 1rem;
+  --text-big-margin: 1.5rem;
 }
 
 body {
   font-family: "Raveo Variable", Inter, Arial, sans-serif;
-  font-size: 20px;
-  line-height: 1.25em;
+  font-size: 18px;
   background: var(--background);
   color: var(--text);
+}
+
+body * {
+  line-height: 1.65em;
 }
 
 h1,
@@ -32,7 +35,6 @@ h3,
 h4 {
   font-weight: bold;
   margin-bottom: var(--text-big-margin);
-  line-height: 1.25em;
 }
 h1 {
   font-size: 2.5rem;
@@ -62,11 +64,7 @@ a {
 
 ul {
   list-style-type: disc;
-  list-style-position: inside;
-}
-li {
-  padding-left: 0.5rem;
-  margin-bottom: 0.25rem;
+  list-style-position: outside;
 }
 
 em {
