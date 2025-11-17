@@ -85,6 +85,7 @@ func main() {
 	backend.HandleStaticFiles(r, "/assets", assetsFS)
 	backend.HandleStaticFiles(r, "/static", os.DirFS(cfg.PublicFolder))
 
+	slog.Info("server started", "port", port)
 	server := &http.Server{Addr: fmt.Sprintf(":%d", port), Handler: r}
 
 	errChan := make(chan error)
