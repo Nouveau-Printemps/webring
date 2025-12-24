@@ -2,11 +2,13 @@
   --background: hsl(97, 30%, 90%);
   --text: hsl(201, 35%, 12%);
   --accent: hsl(150, 65%, 20%);
+  --accent-hover: hsl(150, 65%, 45%, 0.2); 
 
   @media (prefers-color-scheme: dark) {
     --background: hsl(201, 35%, 12%);
     --text: hsl(97, 10%, 85%);
     --accent: hsl(50, 50%, 70%);
+    --accent-hover: hsl(50, 60%, 30%, 0.2); 
   }
 
   --content-margin: 15%;
@@ -59,6 +61,7 @@ p {
 a {
   color: var(--accent);
   &:hover {
+    background: var(--accent-hover);
   }
 }
 
